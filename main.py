@@ -19,9 +19,6 @@ def main():
         x = SCREEN_WIDTH / 2,
         y = SCREEN_HEIGHT / 2
     )
-    updatable.update(dt)
-
-
     while True:
         log_state()    
         for event in pygame.event.get():
@@ -29,6 +26,7 @@ def main():
                 pygame.quit()
                 return
         screen.fill("black")
+        updatable.update(dt)
         for obj in drawable:
             obj.draw(screen)
         pygame.display.flip()
